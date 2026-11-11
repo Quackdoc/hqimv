@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=hqimv
+Comment=High-quality CPU image viewer for Wayland
+Exec=hqimv %F
+Terminal=false
+Categories=Graphics;Viewer;
+MimeType=image/jpeg;image/png;image/gif;image/webp;image/tiff;image/jxl;image/bmp;image/x-icon;image/vnd.microsoft.icon;image/x-exr;image/vnd.radiance;image/x-portable-anymap;image/x-portable-pixmap;image/x-portable-graymap;image/x-portable-bitmap;image/x-qoi;image/x-tga;

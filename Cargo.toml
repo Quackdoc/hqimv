@@ -1,0 +1,71 @@
+[package]
+name = "hqimv"
+version = "0.1.0"
+edition = "2024"
+description = "High-quality CPU image viewer for Wayland (pqiv-inspired)"
+license = "MIT OR Apache-2.0"
+authors = ["Mitchel Stewart <quackdoctech@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/quackdoc/hqimv"
+homepage = "https://github.com/quackdoc/hqimv"
+rust-version = "1.89"
+keywords = ["image-viewer", "wayland", "viewer"]
+categories = ["multimedia::images"]
+
+[dependencies]
+usage = { package = "usage-rs", version = "7" }
+
+winit = { version = "0.30", default-features = false, features = [
+    "rwh_06",
+    "wayland",
+] }
+raw-window-handle = "0.6"
+smithay-client-toolkit = { version = "0.21", default-features = false }
+wayland-client = "0.31"
+wayland-backend = { version = "0.3", features = ["client_system"] }
+
+image = { version = "0.25", default-features = false, features = [
+    "png",
+    "jpeg",
+    "webp",
+    "tiff",
+    "exr",
+    "hdr",
+    "gif",
+    "bmp",
+    "ico",
+    "pnm",
+    "qoi",
+    "tga",
+    "rayon",
+] }
+half = "2"
+rayon = "1"
+inotify = { version = "0.11", default-features = false }
+signal-hook = "0.4"
+ureq = "3"
+
+anyhow = "1"
+thiserror = "2"
+trash = "5"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1", features = ["derive"] }
+serde_ignored = "0.1"
+toml = "1"
+rand = "0.10"
+dirs = "7"
+jxl-image-rs-integration = "0.8"
+moxcms = "0.9.1"
+fontdue = "0.9"
+
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+debug = false
+
+[profile.dev]
+opt-level = 1
